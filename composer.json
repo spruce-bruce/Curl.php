@@ -1,3 +1,11 @@
 {
-    "name" : "spruce-bruce/curl"
+    "name" : "spruce-bruce/curl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaron Bruce",
+            "homepage": "https://github.com/spruce-bruce",
+            "role": "Developer"
+        }
+    ]
 }
