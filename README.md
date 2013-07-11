@@ -70,3 +70,4 @@ $response = Curl::get($url, $data, $options);
 - Clean up HTTP code parsing and make it more robust (ie, add any messages in the response to the exception)
 - Save and make response headers accessible
 - Save and make curl resource accessible
+- Document exceptions
