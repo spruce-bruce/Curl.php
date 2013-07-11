@@ -1,6 +1,13 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
 class Curl{
+    /**
+     * Perform an http POST
+     * @param  string  $url     POST url
+     * @param  array $data      associative array of post vals
+     * @param  boolean $options array of custom options to be passed to curl_setopt_array()
+     * @return string           string returned from curl_exec()
+     */
     public static function post($url, $data = false, $options = false){
         if(!$options){
             $options = array();
@@ -15,6 +22,18 @@ class Curl{
         return self::do_curl($url, $options);
     }
     
+    /**
+     * Perform an http GET
+     *
+     * You can put your get vars in the url passed in or pass an
+     * associative array and the get() method will add the contents
+     * to the end of the url
+     * 
+     * @param  string  $url     GET url
+     * @param  array $data      associative array of GET values
+     * @param  array $options   array of custom options to be passed to curl_setopt_array()
+     * @return string           string returned from curl_exec()
+     */
     public static function get($url, $data = false, $options = false){
         if(!$options){
             $options = array();
@@ -31,10 +50,16 @@ class Curl{
         return self::do_curl($url, $options);
     }
     
+    /**
+     * @todo write this method!
+     */
     public static function put($url, $data){
         
     }
     
+    /**
+     * @todo write this method!
+     */
     public static function delete($url, $data){
         
     }
@@ -88,7 +113,7 @@ class Curl{
      * http response codes documented here: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      * 
      * @param type $http_code
-     * @throws Http_Code_Exception (parent exception)
+     * @throws Http_Code_Exception
      * @throws Redirection_Exception
      * @throws Bad_Request_Exception
      * @throws Server_Error_Exception 
