@@ -21,3 +21,52 @@ unimplemented
 
 ### PUT
 unimplemented
+
+## Usage
+Here are some fictional examples that show the use of Curl.php.
+
+### POST
+Example POST:
+```php
+//set the url
+$url = "http://somefictionaldomain.com/api";
+
+//set the POST vars
+$data = array(
+    'query' => 'active',
+    'page' => 3,
+    'count' => 10
+);
+
+//get the post response
+$response = Curl::post($url, $data);
+```
+
+### GET
+Example GET with additional curl options:
+```php
+//set the url
+$url = "http://somefictionaldomain.com/api";
+
+//set the GET vars
+$data = array(
+    'query' => 'active',
+    'page' => 3,
+    'count' => 10
+);
+
+//set addtional curl options
+$options = array(
+    CURLOPT_FAILONERROR => true
+);
+
+//get the GET response
+$response = Curl::get($url, $data, $options);
+
+```
+
+## TODO
+- Implemente delete() and put() methods
+- Clean up HTTP code parsing and make it more robust (ie, add any messages in the response to the exception)
+- Save and make response headers accessible
+- Save and make curl resource accessible
